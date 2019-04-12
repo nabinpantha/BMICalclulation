@@ -2,9 +2,13 @@ package JavaBMRCalculation;
 
 public class Calculation {
 
-
 	public double calulateBMR(Person person) {
 
+		/*
+		 * The Harris-Benedict formula (BMR based on total body weight) Men: BMR = 66 +
+		 * (13.7 X wt in kg) + (5 X ht in cm) - (6.8 X age in years) Women: BMR = 655 +
+		 * (9.6 X wt in kg) + (1.8 X ht in cm) - (4.7 X age in years)
+		 */
 		if (person.getSex().equalsIgnoreCase("male")) {
 			return 66 + 6.23f * person.getWeight() + 4.7f * person.getHeight() - 6.8f * person.getAge();
 		} else {
@@ -52,8 +56,8 @@ public class Calculation {
 	}
 
 	public void getActivityLevel(Person person) {
-	
-		if (person.getActivitylevel()== 1) {
+
+		if (person.getActivitylevel() == 1) {
 			System.out.println("You are Sedentary active.");
 		} else if (person.getActivitylevel() == 2) {
 			System.out.println("You are Lighly active.");
@@ -65,7 +69,7 @@ public class Calculation {
 			System.out.println("You are very active.");
 		}
 	}
-	
+
 	public void getBMICategory(Person person, double bmi) {
 		if (bmi <= 18.5) {
 			System.out.println("You are Underweight.");
@@ -80,5 +84,3 @@ public class Calculation {
 	}
 
 }
-
-
